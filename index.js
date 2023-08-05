@@ -2,8 +2,8 @@
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
-const { default: Choices } = require("inquirer/lib/objects/choices");
-const { argv0 } = require("process");
+const { resolve } = require("path");
+const { error } = require("console");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -75,9 +75,8 @@ const questions = [
   {
     type: "list",
     name: "license",
-    message: "please select license for this project?"
-    choices: ["apache", "agpl","mit", "no lincense"],
-    
+    message: "please select license for this project?",
+    choices: ["Agpl", "Apache", "Mit", "no license"],
   },
   {
     type: "input",
@@ -105,13 +104,73 @@ const questions = [
       }
     },
   },
+  {
+    type: "input",
+    name: "github",
+    message: "Please enter your github username",
+    Validate: (githubUsername) => {
+      if (githubUsername) {
+        return true;
+      } else {
+        console.log("github username is required!");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
+    Validate: (testInput) => {
+      if (testInput) {
+        return true;
+      } else {
+        console.log("Please enter test insttruction !");
+        return false;
+      }
+    },
+  },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = (fileNameContent) => {
+  return new Promise((resolve, reject) => {
+    fs.writeToFile("./generated-README.md", fileNameContent, (err) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      resolve({
+        is: true,
+        message: "README file created!",
+      });
+    });
+  });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => {
+  return inquirer.prompt(questions).then((readmeData) => {
+    return readmeData;
+  });
+};
 
 // Function call to initialize app
-init();
+init()
+  .then((readmeData) => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+  })
+
+  .then((pageMD) => {
+    return writeToFile(pageMD);
+  })
+
+  .then((writeToFileRespose) => {
+    console.log(writeToFileRespose.message);
+  })
+
+  .catch((err) => {
+    console.log(err);
+  });
