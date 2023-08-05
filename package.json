@@ -1,23 +1,22 @@
 {
-  "name": "static-site",
+  "name": "challenge-9-profesional-readme-",
   "version": "1.0.0",
-  "description": "Professional README",
+  "description": "A Professional README file generator using node js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Meriam Sadio",
-  "license": "ISC",
-  "dependencies": {
-    "inquirer": "^8.2.4"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/msadio8/Challenge-9-Profesional-README-.git"
   },
+  "author": "Meriam Sadio",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/msadio8/Challenge-9-Profesional-README-/issues"
   },
-  "homepage": "https://github.com/msadio8/Challenge-9-Profesional-README-#readme"
+  "homepage": "https://github.com/msadio8/Challenge-9-Profesional-README-#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }

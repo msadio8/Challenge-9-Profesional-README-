@@ -1,64 +1,60 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === "MIT") {
+  if (license === "mit") {
     return `
-    ![License: MIT](https://img.shields.io/badge/License-${license}MIT-yellow.svg)
+  ![badge](https://img.shields.io/badge/License-${license}-yellow.svg)
     `;
   } else {
-    return '';
+    return " ";
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license ==="MIT") {
-    return`
-    [${license}(https://opensource.org/licenses/MIT${license})
+  if (license === "mit") {
+    return `
+    [${license}(https://opensource.org/licenses/${license})
      `;
-    } else {
-      return'';
-    }
-
-    
-
+  } else {
+    return " ";
+  }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === "MIT") {
-    return`
-    ## [License](#table-of-Contents)
+  if (license === "mit") {
+    return `
+    ## [License](#table-of-contents)
 
     This application is under:
     
     ${renderLicenseLink(license)}
      `;
-    } else {
-      return '';
-    }
+  } else {
+    return " ";
+  }
 }
 
-function renderLicenseTOC(licenses) {
-  if (licence ==="MIT") {
+function renderLicenseTOC(license) {
+  if (license === "mit") {
     return `
-    * [Lincese](#license)
+  * [Lincese](#license)
     `;
   } else {
-    return '';
+    return " ";
   }
 }
 
 function renderContribute(confirmContribute, data) {
-  if (confirmContribute) {
+  if (!confirmContribute) {
     return `
     Third party contributors are welcome no guidelines required.
     `;
   } else {
     return `
-    
   ${data}
    `;
   }
@@ -66,24 +62,24 @@ function renderContribute(confirmContribute, data) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.ProjectName}
+
   ${renderLicenseBadge(data.license)}
 
   ## Table-of-Contents
 
   *[Description](#description)
-  *[Installation Instruction](#installation instruction)
-  *[Usage](#Usage)
+  *[Installation](#installation )
+  *[Usage](#usage)
   ${renderLicenseTOC(data.licence)}
-  *[Contributing](#contributing)
+  *[Contribute](#contribute)
   *[Tests](#tests)
   *[Question](#questions)
 
   ##[Description](#table-of-contents)
  
-  ${data.what}
-  ${data.why}
-  ${data.how}
+  ${data.Description}
+  
 
   ##[Installation](#table-of-contents)
 
@@ -95,13 +91,15 @@ function generateMarkdown(data) {
 
   ${renderLicenseSection(data.licence)}
 
-  ##[Contributing](#table-of-contents)
+  ##[Contribute](#table-of-contents)
+  ${data.contribute}
 
   ${renderContribute(data.confirmContribute, data.contribute)}
 
   ##[Test](#table-of-contents)
+  ${data.test}
   
-  [Github](https://github.com/${data.githubUsername})
+  [Github](https://github.com/${data.github})
 
   [Email: ${data.email}](mailto:${data.email})
 

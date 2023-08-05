@@ -2,8 +2,7 @@
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
-const { resolve } = require("path");
-const { error } = require("console");
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -33,25 +32,13 @@ const questions = [
       }
     },
   },
+
   {
     type: "input",
-    name: "Table",
-    message: "Please provide table of Contents for this Project?",
-    Validate: (TableInput) => {
-      if (TableInput) {
-        return true;
-      } else {
-        console.log("Please enter table content!");
-        return false;
-      }
-    },
-  },
-  {
-    type: "input",
-    name: "Installation",
+    name: "installation",
     message: "Please Provide Installation instruction",
-    Validate: (InstallationInput) => {
-      if (InstallationInput) {
+    Validate: (installationInput) => {
+      if (installationInput) {
         return true;
       } else {
         console.log("Please input installation instruction!");
@@ -61,7 +48,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "Usage",
+    name: "usage",
     message: "Please Provide Usage instruction for this Project?",
     Validate: (UsageInput) => {
       if (UsageInput) {
@@ -76,14 +63,14 @@ const questions = [
     type: "list",
     name: "license",
     message: "please select license for this project?",
-    choices: ["Agpl", "Apache", "Mit", "no license"],
+    choices: ["agpl", "apache", "mit", "no license"],
   },
   {
     type: "input",
-    name: "Contribution",
+    name: "contribute",
     message: "Please input any contribution guidlines for this project",
-    Validate: (ContributionInput) => {
-      if (ContributionInput) {
+    Validate: (contributionInput) => {
+      if (contributionInput) {
         return true;
       } else {
         console.log("Contribution guidelines is require!");
@@ -94,7 +81,7 @@ const questions = [
   {
     type: "input",
     name: "test",
-    message: "Please enter test instruction",
+    message: "Please enter test instruction:",
     Validate: (testInput) => {
       if (testInput) {
         return true;
@@ -121,11 +108,11 @@ const questions = [
     type: "input",
     name: "email",
     message: "What is your email address?",
-    Validate: (testInput) => {
-      if (testInput) {
+    Validate: (emailInput) => {
+      if (emailInput) {
         return true;
       } else {
-        console.log("Please enter test insttruction !");
+        console.log("Please enter email address !");
         return false;
       }
     },
@@ -133,9 +120,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-const writeToFile = (fileNameContent) => {
+const writeFile = (fileNameContent) => {
   return new Promise((resolve, reject) => {
-    fs.writeToFile("./generated-README.md", fileNameContent, (err) => {
+    fs.writeFile("./generated-README.md", fileNameContent, (err) => {
       if (err) {
         reject(err);
         return;
@@ -164,7 +151,7 @@ init()
   })
 
   .then((pageMD) => {
-    return writeToFile(pageMD);
+    return writeFile(pageMD);
   })
 
   .then((writeToFileRespose) => {
