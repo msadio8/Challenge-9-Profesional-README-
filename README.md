@@ -34,15 +34,19 @@ No usage instruction please refer to my walkthrough video
 
 [MIT](https://opensource.org/licenses/)
 
+## Contribute
+
+Open to third party contributors for future development of this application.
+
 ## Tests
 
-No test intruction please refer to my walkthrough video
+No test instruction please refer to my walkthrough video
 
 ![](utils/images/image1.png)
 
 ![](utils/images/image2.png)
 
-[Walkthrough video click here 🎬](https://drive.google.com/file/d/1wDMi6mh31hqJTdMA7jMz3qLcIX9vxuYS/view)
+[Walkthrough video click here 🎬](https://drive.google.com/file/d/1b0mxz3Shx0Yz57VE1z_1b2-Inh6LYt-8/view)
 
 ## Question
 
@@ -50,7 +54,7 @@ Please contact through github or feel free to email me
 
 ## Github
 
-[Github](https://github.com/msadio8/Challenge-9-Profesional-README-)
+[github](https://github.com/msadio8)
 
 ## Email
 

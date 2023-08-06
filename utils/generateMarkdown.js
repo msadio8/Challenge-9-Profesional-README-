@@ -45,7 +45,7 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ## Description
-   ${data.description}
+  ${data.description}
 
   ## Table-of-Contents
 
@@ -63,7 +63,7 @@ function generateMarkdown(data) {
 
   * [Question](#question)
 
-   ## Installation
+  ## Installation
 
   ${data.installation}
 
@@ -76,6 +76,10 @@ function generateMarkdown(data) {
   ${data.license}
 
   ${renderLicenseSection(data.licence)}
+
+  ## Contribute
+
+  ${data.contribute}
 
   ## Tests
 
