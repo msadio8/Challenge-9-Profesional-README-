@@ -3,7 +3,6 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
 
-
 // TODO: Create an array of questions for user input
 const questions = [
   {
@@ -63,7 +62,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "please select license for this project?",
-    choices: ["agpl", "apache", "mit", "no license"],
+    choices: ["Agpl", "Apache", "MIT", "no license"],
   },
   {
     type: "input",
@@ -87,6 +86,19 @@ const questions = [
         return true;
       } else {
         console.log("Please enter test insttruction !");
+        return false;
+      }
+    },
+  },
+  {
+    type: "input",
+    name: "question",
+    message: " if users have question or issues how to report ?",
+    Validate: (questionInput) => {
+      if (questionInput) {
+        return true;
+      } else {
+        console.log("Please enter contact information !");
         return false;
       }
     },

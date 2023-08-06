@@ -1,7 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === "mit") {
+  if (license === "MIT") {
     return `
   ![badge](https://img.shields.io/badge/License-${license}-yellow.svg)
     `;
@@ -13,9 +13,9 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === "mit") {
+  if (license === "MIT") {
     return `
-    [${license}(https://opensource.org/licenses/${license})
+    [${license}](https://opensource.org/licenses/${license})
      `;
   } else {
     return " ";
@@ -25,9 +25,9 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === "mit") {
+  if (license === "MIT") {
     return `
-    ## [License](#table-of-contents)
+    ## [License](#Table-of-contents)
 
     This application is under:
     
@@ -50,38 +50,45 @@ function generateMarkdown(data) {
 
   * [Installation](#installation )
 
+  * [License](#license )
+
   * [Usage](#usage)
 
   * [Contribute](#contribute)
 
   * [Tests](#tests)
 
-  * [Question](#questions)
+  * [Question](#question)
 
-  ##[Description](#table-of-contents)
+  ## [Description](#Table-of-contents)
  
   ${data.description}
   
 
-  ##[Installation](#table-of-contents)
+  ## [Installation](#Table-of-contents)
 
   ${data.installation}
 
-  ##[Usage](#table-of-contents)
+  ## [Usage](#Table-of-contents)
 
   ${data.usage}
 
+  ## [License](#license )
+
   ${renderLicenseSection(data.licence)}
 
-  ##[Contribute](#table-of-contents)
+  ## [Contribute](#Table-of-contents)
 
   ${data.contribute}
 
 
-  ##[Test](#table-of-contents)
+  ## [Tests](#Table-of-contents)
 
   ${data.test}
   
+ ## [Question](#Table-ofcontents)
+
+  ${data.question}
   
   [Github](https://github.com/${data.github})
 

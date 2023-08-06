@@ -1,40 +1,54 @@
-# Professional README Generator
+# 09 Node.js Challenge: Professional README Generator
 
   
-  ![badge](https://img.shields.io/badge/License-mit-yellow.svg)
+  ![badge](https://img.shields.io/badge/License-MIT-yellow.svg)
     
 
   ## Table-of-Contents
 
-  *[Description](#description)
-  *[Installation](#installation )
-  *[Usage](#usage)
-  *[Contribute](#contribute)
-  *[Tests](#tests)
-  *[Question](#questions)
+  * [Description](#description)
 
-  ##[Description](#table-of-contents)
+  * [Installation](#installation )
+
+  * [License](#license )
+
+  * [Usage](#usage)
+
+  * [Contribute](#contribute)
+
+  * [Tests](#tests)
+
+  * [Question](#question)
+
+  ## [Description](#Table-of-contents)
  
-  This Challenge 9 we create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
+  This is our challenge 9 we create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
   
 
-  ##[Installation](#table-of-contents)
+  ## [Installation](#Table-of-contents)
 
-  open VS code then run npm install , npm init and Inquirer package
+  copy the starter code ,then open VS code run npm install , npm init ,  and Inquirer package
 
-  ##[Usage](#table-of-contents)
+  ## [Usage](#Table-of-contents)
 
-  please refer to my walkthough video
+  please refer to my walkthrough video
+
+  ## [License](#license )
 
    
 
-  ##[Contribute](#table-of-contents)
+  ## [Contribute](#Table-of-contents)
 
-  open to interested third party contributors for further development of this application 
+  Open to third party contributors for future improvement or development for thi app
 
 
-  ##[Test](#table-of-contents)
-  no test intruction for this application
+  ## [Tests](#Table-of-contents)
+
+  no test instruction please refer to my walkthrough video and screenshots
+  
+ ## [Question](#Table-ofcontents)
+
+  undefined
   
   [Github](https://github.com/msadio8)
 
