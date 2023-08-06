@@ -21,10 +21,10 @@ const questions = [
   },
   {
     type: "input",
-    name: "Description",
+    name: "description",
     message: "Please provide project description ?",
-    Validate: (ProjectDescption) => {
-      if (ProjectDescption) {
+    Validate: (descptionInput) => {
+      if (descptionInput) {
         return true;
       } else {
         console.log("description is required !");

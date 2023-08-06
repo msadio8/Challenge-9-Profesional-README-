@@ -38,28 +38,6 @@ function renderLicenseSection(license) {
   }
 }
 
-function renderLicenseTOC(license) {
-  if (license === "mit") {
-    return `
-  * [Lincese](#license)
-    `;
-  } else {
-    return " ";
-  }
-}
-
-function renderContribute(confirmContribute, data) {
-  if (!confirmContribute) {
-    return `
-    Third party contributors are welcome no guidelines required.
-    `;
-  } else {
-    return `
-  ${data}
-   `;
-  }
-}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.ProjectName}
@@ -68,17 +46,21 @@ function generateMarkdown(data) {
 
   ## Table-of-Contents
 
-  *[Description](#description)
-  *[Installation](#installation )
-  *[Usage](#usage)
-  ${renderLicenseTOC(data.licence)}
-  *[Contribute](#contribute)
-  *[Tests](#tests)
-  *[Question](#questions)
+  * [Description](#description)
+
+  * [Installation](#installation )
+
+  * [Usage](#usage)
+
+  * [Contribute](#contribute)
+
+  * [Tests](#tests)
+
+  * [Question](#questions)
 
   ##[Description](#table-of-contents)
  
-  ${data.Description}
+  ${data.description}
   
 
   ##[Installation](#table-of-contents)
@@ -92,12 +74,14 @@ function generateMarkdown(data) {
   ${renderLicenseSection(data.licence)}
 
   ##[Contribute](#table-of-contents)
+
   ${data.contribute}
 
-  ${renderContribute(data.confirmContribute, data.contribute)}
 
   ##[Test](#table-of-contents)
+
   ${data.test}
+  
   
   [Github](https://github.com/${data.github})
 
