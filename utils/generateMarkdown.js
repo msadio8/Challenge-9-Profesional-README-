@@ -44,6 +44,9 @@ function generateMarkdown(data) {
 
   ${renderLicenseBadge(data.license)}
 
+  ## Description
+   ${data.description}
+
   ## Table-of-Contents
 
   * [Description](#description)
@@ -60,29 +63,21 @@ function generateMarkdown(data) {
 
   * [Question](#question)
 
-  ## [Description](#Table-of-contents)
- 
-  ${data.description}
-  
-
-  ## [Installation](#Table-of-contents)
+   ## Installation
 
   ${data.installation}
 
-  ## [Usage](#Table-of-contents)
-
+  ## Usage
+  
   ${data.usage}
 
-  ## [License](#license )
+  ## license
+
+  ${data.license}
 
   ${renderLicenseSection(data.licence)}
 
-  ## [Contribute](#Table-of-contents)
-
-  ${data.contribute}
-
-
-  ## [Tests](#Table-of-contents)
+  ## Tests
 
   ${data.test}
 
@@ -90,15 +85,19 @@ function generateMarkdown(data) {
   
   ![](utils/images/image2.png)
 
-  [Walkthrough video click 👉🏻](https://drive.google.com/file/d/1wDMi6mh31hqJTdMA7jMz3qLcIX9vxuYS/view)
+  [Walkthrough video click here 🎬](https://drive.google.com/file/d/1wDMi6mh31hqJTdMA7jMz3qLcIX9vxuYS/view)
   
- ## [Question](#Table-ofcontents)
+  ## Question
 
   ${data.question}
-  
-  [Github](https://github.com/${data.github})
 
-  [Email: ${data.email}](mailto:${data.email})
+  ## Github
+  
+  ${data.github}
+
+  ## Email
+
+  ${data.email}
 
 `;
 }

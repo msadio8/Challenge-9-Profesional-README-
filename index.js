@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
+const path = require("path")
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -132,44 +133,19 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-const writeFile = (fileNameContent) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile("./generated-README.md", fileNameContent, (err) => {
-      if (err) {
-        reject(err);
-        return;
-      }
+function writeToFile(fileName, data) {
+  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
-      resolve({
-        is: true,
-        message: "README file created!",
-      });
-    });
-  });
-};
+
 
 // TODO: Create a function to initialize app
-const init = () => {
-  return inquirer.prompt(questions).then((readmeData) => {
-    return readmeData;
+function init() {
+  inquirer.prompt(questions).then((inquirerResponses) => {
+    console.log("creating README");
+    writeToFile("README.md", generateMarkdown({ ...inquirerResponses }));
   });
-};
+}
 
 // Function call to initialize app
-init()
-  .then((readmeData) => {
-    console.log(readmeData);
-    return generateMarkdown(readmeData);
-  })
-
-  .then((pageMD) => {
-    return writeFile(pageMD);
-  })
-
-  .then((writeToFileRespose) => {
-    console.log(writeToFileRespose.message);
-  })
-
-  .catch((err) => {
-    console.log(err);
-  });
+init();
