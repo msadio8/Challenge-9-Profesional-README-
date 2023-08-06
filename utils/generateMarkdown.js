@@ -85,6 +85,12 @@ function generateMarkdown(data) {
   ## [Tests](#Table-of-contents)
 
   ${data.test}
+
+  ![](utils/images/image1.png)
+  
+  ![](utils/images/image2.png)
+
+  [Walkthrough video click 👉🏻](https://drive.google.com/file/d/1wDMi6mh31hqJTdMA7jMz3qLcIX9vxuYS/view)
   
  ## [Question](#Table-ofcontents)
 
